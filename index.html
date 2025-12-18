@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Guessing Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #2071e3, #08b1ea);
+      margin: 0;
+      transition: background-color 0.5s ease;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+      transition: 0.3s;
+    }
+
+    .user-info {
+      text-align: left;
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      background: #11d4ce;
+      border: none;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #15b17a;
+    }
+
+    #restartBtn {
+      display: none;
+      background: #6c5ce7;
+      margin-top: 15px;
+    }
+
+    #restartBtn:hover {
+      background: #4834d4;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    #hint {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="user-info">
+      <strong>Name:</strong> Dan Jehu C. Buetre<br>
+      <strong>Course:</strong> BSIT<br>
+      <strong>Year & Section:</strong> 2A
+    </div>
+
+    <h1>Word Guessing Game</h1>
+    <p>Try to guess the secret word!</p>
+    
+    <input type="text" id="userGuess" placeholder="Enter your guess" onkeydown="handleKeyPress(event)" />
+    <button onclick="submitGuess()">Submit Guess</button>
+
+    <div id="hint"></div>
+    <div id="feedback"></div>
+    <button id="restartBtn" onclick="restartGame()">Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
